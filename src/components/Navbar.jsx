@@ -35,7 +35,7 @@ class Navbar extends Component {
           closable={false}
           onClose={this.onClose}
         >
-        <p><Link>Home</Link></p>
+        <p><Link to="/">Home</Link></p>
         <p><Link to="/notes">Notes</Link></p>
         <p><Link to="/feedback">Feedback</Link></p>
         <p><Link to="/upload">Upload</Link></p>
