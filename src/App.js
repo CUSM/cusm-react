@@ -1,11 +1,25 @@
 import React from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+import Index from './pages/Index';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/">
+        <Index/>
+        </Route>
+        <Route path="/notes"> 
+
+        </Route>
+      </Switch>
+
+    </Router>
   );
 }
 
