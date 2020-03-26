@@ -1,51 +1,91 @@
-import React from "react";
-import logo from '../images/logo.png'
-import { Row, Col, Typography } from "antd";
+import React, { Component } from "react";
+import logo from "../images/logo.png";
+import { Row, Col, Typography, Button, Drawer } from "antd";
 import "antd/dist/antd.css";
 import { Link } from "react-router-dom";
 const { Title } = Typography;
 
+class Navbar extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "Souvik",
+      visible: false
+    };
+  }
 
-function Navbar() {
-  return (
-    <div>
-      <Row >
-        <Col span={20} offset={2}>
-          <div>
-          <Row>
-            <Col flex={4}>
-            <img src={logo} alt="logo"/>
-            </Col>
-            <Col flex={2}>
-              <Row className="ln-12">
-                <Col flex={1}>
-                  <Title level={4}>
-                  <Link to="/">Home</Link>
-                  </Title>
+  showDrawer = () => {
+    this.setState({
+      visible: true
+    });
+  };
+
+  onClose = () => {
+    this.setState({
+      visible: false
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Drawer
+          placement="left"
+          visible={this.state.visible}
+          closable={false}
+          onClose={this.onClose}
+        >
+        <p><Link>Home</Link></p>
+        <p><Link to="/notes">Notes</Link></p>
+        <p><Link to="/feedback">Feedback</Link></p>
+        <p><Link to="/upload">Upload</Link></p>
+
+        </Drawer>
+        <Row>
+          <Col span={21} offset={2}>
+            <div>
+              <Row>
+                <Col flex={4}>
+                  <img src={logo} alt="logo" />
                 </Col>
-                <Col flex={1}>
-                  <Title level={4}>
-                  <Link to="/notes">Notes</Link>
-                  </Title>
-                </Col>
-                <Col flex={1}>
-                  <Title level={4}>
-                  <Link to="/feedback">Feedback</Link>
-                  </Title>
-                </Col>
-                <Col flex={1}>
-                  <Title level={4}>
-                  <Link to="upload">Upload</Link>
-                  </Title>
+                <Col flex={2} className="">
+                  <Row>
+                    <Col>
+                      <Button type="primary" onClick={this.showDrawer} className="smbtn">
+                        Press
+                      </Button>
+                    </Col>
+                  </Row>
+                  <Row className=" smlinks">
+                    <Col flex={1}>
+                      <Title level={4}>
+                        <Link to="/">Home</Link>
+                      </Title>
+                    </Col>
+                    <Col flex={1}>
+                      <Title level={4}>
+                        <Link to="/notes">Notes</Link>
+                      </Title>
+                    </Col>
+                    <Col flex={1}>
+                      <Title level={4}>
+                        <Link to="/feedback">Feedback</Link>
+                      </Title>
+                    </Col>
+                    <Col flex={1}>
+                      <Title level={4}>
+                        <Link to="upload">Upload</Link>
+                      </Title>
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
-            </Col>
-          </Row>
-          </div>
-        </Col>
-      </Row>
-    </div>
-  );
+            </div>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
 }
 
 export default Navbar;
