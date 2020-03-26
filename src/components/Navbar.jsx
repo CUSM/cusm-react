@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import logo from "../images/logo.png";
-import { Row, Col, Typography, Button, Drawer } from "antd";
+import { Row, Col, Typography, Button, Drawer} from "antd";
 import "antd/dist/antd.css";
 import { Link } from "react-router-dom";
+import {MenuOutlined} from '@ant-design/icons'
 const { Title } = Typography;
+
 
 class Navbar extends Component {
   constructor() {
@@ -35,27 +37,30 @@ class Navbar extends Component {
           closable={false}
           onClose={this.onClose}
         >
-        <p><Link to="/">Home</Link></p>
-        <p><Link to="/notes">Notes</Link></p>
-        <p><Link to="/feedback">Feedback</Link></p>
-        <p><Link to="/upload">Upload</Link></p>
-
+          <p>
+            <Link to="/">Home</Link>
+          </p>
+          <p>
+            <Link to="/notes">Notes</Link>
+          </p>
+          <p>
+            <Link to="/feedback">Feedback</Link>
+          </p>
+          <p>
+            <Link to="/upload">Upload</Link>
+          </p>
         </Drawer>
         <Row>
           <Col span={21} offset={2}>
             <div>
               <Row>
                 <Col flex={4}>
-                  <img src={logo} alt="logo" />
+                  <img className="brnd-img" src={logo} alt="logo" />
                 </Col>
-                <Col flex={2} className="">
-                  <Row>
-                    <Col>
-                      <Button type="primary" onClick={this.showDrawer} className="smbtn">
-                        Press
-                      </Button>
-                    </Col>
-                  </Row>
+                <Col>
+                  <h1><MenuOutlined onClick={this.showDrawer} className="smbtn" /></h1>
+                </Col>
+                <Col flex={2} className="ln-12">
                   <Row className=" smlinks">
                     <Col flex={1}>
                       <Title level={4}>

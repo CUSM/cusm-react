@@ -6,13 +6,16 @@
   visibility: hidden;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 768px){
   .smlinks{
     visibility: hidden;
   }
   .smbtn{
     visibility: visible;
     margin-top: 2.2rem;
-    margin-left: 12.2rem;
+  }
+  .brnd-img{
+    width: 80px;
+    margin-top: 1.2rem;
   }
 }
