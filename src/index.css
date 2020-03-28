@@ -5,6 +5,24 @@
 .smbtn{
   visibility: hidden;
 }
+.mt-6{
+  margin-top: 120px;
+}
+
+.mt-small{
+  margin-top: 22px;
+}
+
+.txt-size-30{
+  font-size: 80px;
+  line-height: 4.2rem;
+  color: black;
+}
+
+.txt-size-10{
+  font-size: 25px;
+  color: black;
+}
 
 @media screen and (max-width: 768px){
   .smlinks{

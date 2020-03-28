@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import logo from "../images/logo.png";
-import { Row, Col, Typography, Button, Drawer} from "antd";
-import "antd/dist/antd.css";
+import { Row, Col, Typography, Drawer} from "antd";
 import { Link } from "react-router-dom";
 import {MenuOutlined} from '@ant-design/icons'
 const { Title } = Typography;
